@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#141010">
+  <meta name="description" content="Meet The Mad Italian: a little story of slow dough, wood-fired heat and good taste gone mad.">
+  <title>Our Story | The Mad Italian</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&family=Yellowtail&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --brick: #B3282D;
+      --charcoal: #141010;
+      --cream: #F6EBDD;
+      --orange: #E8782A;
+      --muted: #c9b9a8;
+      --line: rgba(246, 235, 221, .17);
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+      --script: "Yellowtail", cursive;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--charcoal);
+      color: var(--cream);
+      font-family: var(--sans);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      font-weight: 700;
+      line-height: 1.04;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: clamp(2.35rem, 5vw, 4.4rem);
+      letter-spacing: -.045em;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--orange);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+
+    .script {
+      color: var(--orange);
+      font-family: var(--script);
+      font-size: 1.55rem;
+      line-height: 1.2;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 2;
+      border-bottom: 1px solid var(--line);
+      background: var(--charcoal);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 86px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+    }
+
+    .brand {
+      display: grid;
+      flex: 0 0 auto;
+      gap: 3px;
+      text-decoration: none;
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      line-height: 1;
+    }
+
+    .brand-tagline {
+      color: var(--muted);
+      font-family: var(--script);
+      font-size: .97rem;
+    }
+
+    .main-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px 26px;
+    }
+
+    .main-nav a {
+      padding: 10px 0;
+      color: var(--cream);
+      font-size: .78rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .main-nav a:hover,
+    .main-nav a:focus-visible,
+    .main-nav a[aria-current="page"] { color: var(--orange); }
+
+    .main-nav .nav-cta {
+      padding: 11px 17px;
+      border: 1px solid var(--brick);
+      background: var(--brick);
+    }
+
+    .story-hero {
+      display: grid;
+      min-height: 570px;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: clamp(36px, 8vw, 100px);
+      padding-block: 74px 84px;
+    }
+
+    .story-copy { max-width: 540px; }
+
+    .story-copy h1 {
+      margin: 0 0 22px;
+      font-size: clamp(3rem, 7vw, 6.3rem);
+      letter-spacing: -.07em;
+    }
+
+    .story-copy h1 span { display: block; color: var(--brick); }
+
+    .story-copy > p:not(.eyebrow):not(.script) {
+      max-width: 430px;
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .story-copy .script { margin-bottom: 0; }
+
+    .story-photo {
+      position: relative;
+      height: min(530px, 58vw);
+      min-height: 390px;
+      margin: 0;
+      overflow: hidden;
+      background: #30211a;
+    }
+
+    .story-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 52%;
+    }
+
+    .story-photo figcaption {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 35px 20px 18px;
+      background: linear-gradient(transparent, rgba(20, 16, 16, .86));
+      font-family: var(--script);
+      font-size: 1.4rem;
+    }
+
+    .journey-section {
+      padding-block: 90px 106px;
+      background: var(--brick);
+    }
+
+    .journey-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 38px;
+    }
+
+    .journey-heading .eyebrow { color: var(--cream); opacity: .8; }
+    .journey-heading h2 { margin-bottom: 0; }
+    .journey-heading .script { color: var(--cream); }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step-card {
+      min-width: 0;
+      border: 1px solid rgba(246, 235, 221, .2);
+      background: var(--charcoal);
+    }
+
+    .step-card img {
+      width: 100%;
+      height: 235px;
+      object-fit: cover;
+    }
+
+    .step-copy { padding: 22px; }
+
+    .step-number {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--orange);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+
+    .step-copy h3 {
+      margin-bottom: 11px;
+      font-size: 1.45rem;
+    }
+
+    .step-copy p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .story-closer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+      margin-top: 46px;
+      padding: 30px;
+      background: var(--charcoal);
+    }
+
+    .story-closer h3 {
+      margin-bottom: 8px;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+    }
+
+    .story-closer p { margin: 0; color: var(--muted); }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border: 1px solid var(--brick);
+      background: var(--brick);
+      color: var(--cream);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); background: #951f24; }
+
+    .site-footer {
+      padding-block: 38px;
+      border-top: 1px solid var(--line);
+      background: #100d0d;
+    }
+
+    .footer-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 36px;
+      padding-bottom: 28px;
+    }
+
+    .footer-brand { flex: 0 0 auto; }
+    .footer-brand .brand-name { font-size: 1.18rem; }
+    .footer-brand .brand-tagline { display: block; margin-top: 7px; }
+
+    .footer-contact {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 34px;
+    }
+
+    .footer-contact address {
+      color: var(--muted);
+      font-size: .82rem;
+      font-style: normal;
+    }
+
+    .footer-contact a {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: .84rem;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 19px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .footer-bottom p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 36px, 560px); }
+      .header-inner { min-height: auto; align-items: start; flex-direction: column; gap: 10px; padding-block: 17px 12px; }
+      .main-nav { width: 100%; justify-content: flex-start; gap: 2px 20px; }
+      .main-nav a { min-height: 42px; display: inline-flex; align-items: center; }
+      .main-nav .nav-cta { min-height: 40px; padding: 8px 12px; }
+      .story-hero { min-height: auto; grid-template-columns: 1fr; gap: 32px; padding-block: 64px 72px; }
+      .story-copy h1 { font-size: clamp(3.2rem, 14vw, 5.2rem); }
+      .story-photo { height: min(125vw, 500px); min-height: 340px; }
+      .journey-section { padding-block: 72px 80px; }
+      .journey-heading { align-items: start; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .step-card { display: grid; grid-template-columns: minmax(110px, .75fr) 1.25fr; }
+      .step-card img { height: 100%; min-height: 200px; }
+      .step-copy { padding: 20px; }
+      .story-closer { align-items: flex-start; flex-direction: column; margin-top: 28px; padding: 24px; }
+      .footer-top { flex-direction: column; }
+    }
+
+    @media (max-width: 440px) {
+      .wrap { width: min(100% - 30px, 560px); }
+      .main-nav { gap: 0 15px; }
+      .main-nav a { font-size: .72rem; }
+      .step-card { grid-template-columns: 1fr; }
+      .step-card img { height: 210px; min-height: 0; }
+      .footer-contact { grid-template-columns: 1fr; gap: 14px; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="The Mad Italian home">
+        <span class="brand-name">THE MAD ITALIAN</span>
+        <span class="brand-tagline">Good taste, made with madness.</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">Our story</a>
+        <a href="index.html#menu">Menu</a>
+        <a href="index.html#find-us">Find us</a>
+        <a class="nav-cta" href="index.html#reservations">Book a table</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="story-hero wrap" aria-labelledby="story-title">
+      <div class="story-copy">
+        <p class="eyebrow">A Lahore love affair, with extra cheese</p>
+        <h1 id="story-title">Good taste,<span>gone mad.</span></h1>
+        <p>We’re The Mad Italian. Big on wood-fired Neapolitan cooking, generous with the cheese, and absolutely not here to behave around good pizza.</p>
+        <p class="script">For the mad at heart</p>
+      </div>
+      <figure class="story-photo">
+        <img src="images/Screenshot%202026-11-23%20182618.png" alt="A freshly baked pizza being finished by hand">
+        <figcaption>Good taste, gone mad</figcaption>
+      </figure>
+    </section>
+
+    <section class="journey-section" aria-labelledby="journey-title">
+      <div class="wrap">
+        <div class="journey-heading">
+          <div>
+            <p class="eyebrow">Three steps. One very good obsession.</p>
+            <h2 id="journey-title">From fire to heart</h2>
+          </div>
+          <p class="script">The madness, freshly made</p>
+        </div>
+
+        <div class="steps-grid">
+          <article class="step-card">
+            <img src="images/Screenshot%202026-11-23%20182456.png" alt="Rich tomato sauce spread over fresh pizza dough">
+            <div class="step-copy">
+              <span class="step-number">01 — TAKE YOUR TIME</span>
+              <h3>Let the dough dream.</h3>
+              <p>Slow-risen dough turns soft and airy, ready for a properly charred edge.</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <img src="images/Screenshot%202026-11-23%20182618.png" alt="Pizza fresh from the oven, ready for its finishing touches">
+            <div class="step-copy">
+              <span class="step-number">02 — MEET THE FIRE</span>
+              <h3>Turn up the heat.</h3>
+              <p>Wood-fired heat blisters the crust and gets the cheese bubbling.</p>
+            </div>
+          </article>
+          <article class="step-card">
+            <img src="images/Screenshot%202026-11-23%20182549.png" alt="Golden melted cheese and fresh greens on a finished pizza">
+            <div class="step-copy">
+              <span class="step-number">03 — PASS A SLICE</span>
+              <h3>Finish with feeling.</h3>
+              <p>Fresh basil, bright toppings, then straight to the table. No dainty bites.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="story-closer">
+          <div>
+            <h3>That’s The Mad Italian way.</h3>
+            <p>Good taste, made with madness. Come hungry, leave plotting your next visit.</p>
+          </div>
+          <a class="button" href="index.html#menu">Meet the menu <span aria-hidden="true">&nbsp;↗</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">THE MAD ITALIAN</span>
+          <span class="brand-tagline">Good taste, made with madness.</span>
+        </div>
+        <div class="footer-contact">
+          <address>49-Z, Phase 3, DHA, Lahore</address>
+          <address>119/E1 Hali Road, Gulberg 3, Lahore</address>
+          <a href="tel:03208102272">0320-8102272</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Student project, not the official site.</p>
+        <p>For the mad at heart. Made in Lahore.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
