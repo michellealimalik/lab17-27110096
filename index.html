@@ -159,7 +159,7 @@
 
     .hero h1 {
       margin: 0 0 22px;
-      font-size: clamp(3rem, 7vw, 6.7rem);
+      font-size: clamp(2.7rem, 5.7vw, 5rem);
       letter-spacing: -.07em;
     }
 
@@ -188,10 +188,15 @@
       letter-spacing: .08em;
       text-decoration: none;
       text-transform: uppercase;
-      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
     }
 
     .button:hover { transform: translateY(-2px); background: #951f24; border-color: #951f24; }
+
+    .hero .button:hover {
+      border-color: var(--orange);
+      box-shadow: 0 0 24px 4px rgba(232, 120, 42, .65);
+    }
 
     .mobile-order { display: none; }
 
@@ -529,7 +534,7 @@
         box-shadow: 0 8px 24px rgba(0, 0, 0, .45);
       }
       .hero { min-height: auto; grid-template-columns: 1fr; gap: 32px; padding-block: 64px 72px; }
-      .hero h1 { font-size: clamp(3.2rem, 14vw, 5.2rem); }
+      .hero h1 { font-size: clamp(2rem, 9.5vw, 3.8rem); }
       .hero-photo { height: min(125vw, 500px); min-height: 340px; }
       .menu-section { padding-block: 72px 80px; }
       .menu-heading { align-items: start; flex-direction: column; gap: 12px; margin-bottom: 28px; }
@@ -587,7 +592,7 @@
       <div class="hero-copy">
         <p class="hero-greeting">Ciaooo</p>
         <p class="eyebrow">Lahore, meet your new obsession</p>
-        <h1 id="hero-title">A little fire.<span>A lot of feeling.</span></h1>
+        <h1 id="hero-title">GOOD TASTE,<span>MADE WITH MADNESS</span></h1>
         <p>Neapolitan pizzas with charred, pillowy crusts. Pasta worth getting dramatic about. All fired up in Lahore.</p>
         <p class="script">For the mad at heart</p>
         <a class="button" href="#menu">View Menu <span aria-hidden="true">&nbsp;↘</span></a>
